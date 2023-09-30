@@ -1,0 +1,61 @@
+dependencies {
+    def constraint_layout_version = "2.1.4"
+    def material_design_version = "1.7.0"
+    def app_comp_version = "1.5.1"
+    def core_ktx_version = "1.9.0"
+    def hilt_version = "2.44"
+    def navigation_comp_version = "2.5.3"
+    def glide_version = "4.14.2"
+    def junit_version = "4.13.2"
+    def mockk_version = "1.13.2"
+    def arch_core_version = "2.1.0"
+    def coroutine_test_version = "1.6.0"
+    def retrofit_version = "2.9.0"
+    def ds_pref_version = '1.0.0-beta01'
+
+
+    implementation "androidx.core:core-ktx:$core_ktx_version"
+    implementation "androidx.appcompat:appcompat:$app_comp_version"
+    implementation "com.google.android.material:material:$material_design_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
+
+    //    hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+    //  navigation component
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_comp_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_comp_version"
+//    glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+
+
+//    test dependencies
+    testImplementation "junit:junit:$junit_version"
+    testImplementation "io.mockk:mockk:$mockk_version"
+    testImplementation "androidx.arch.core:core-testing:$arch_core_version"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutine_test_version"
+
+    //  retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+    //ok http
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.11.0'
+    //chucker
+    debugImplementation "com.github.chuckerteam.chucker:library:4.0.0"
+    releaseImplementation "com.github.chuckerteam.chucker:library-no-op:4.0.0"
+//    moshi
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
+    implementation 'com.squareup.moshi:moshi:1.14.0'
+    implementation "com.squareup.moshi:moshi-kotlin:1.14.0"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:1.14.0"
+
+    implementation "androidx.datastore:datastore-preferences:$ds_pref_version"
+    implementation 'commons-codec:commons-codec:1.15'
+
+    //room
+    implementation 'androidx.room:room-common:2.5.2'
+    kapt 'androidx.room:room-compiler:2.5.2'
+    implementation 'androidx.room:room-ktx:2.5.2'
+
+}

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.saif.weather_app.presenter.ui.MyLocationViewModel" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presenter.ui.LocationFragment">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="#2C303F"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:itemCount="6"
+            tools:listitem="@layout/item_recyclerview_one" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/currentLocat"
+            style="@style/heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/roboto_slab_bold"
+            android:text="@{viewModel.currentWeather.name}"
+            app:fontFamily="@font/inter_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recyclerView1" />
+
+        <TextView
+            android:id="@+id/currentDate"
+            style="@style/heading2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/roboto_slab_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/currentLocat" />
+
+
+        <ImageView
+            android:id="@+id/mainLogo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:contentDescription="logo"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/moon_cloud"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/currentDate" />
+
+
+        <TextView
+            android:id="@+id/tvTemp"
+            style="@style/heading2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:fontFamily="@font/roboto_slab_light"
+            android:text="Temp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mainLogo" />
+
+        <TextView
+            android:id="@+id/current_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_slab_bold"
+            android:padding="2dp"
+            android:text="@{viewModel.currentWeather.Main.temp.toString()}"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/tvTemp"
+            app:layout_constraintStart_toStartOf="@id/tvTemp"
+            app:layout_constraintTop_toBottomOf="@id/tvTemp" />
+
+
+        <TextView
+            android:id="@+id/tvHumidity"
+            style="@style/heading2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:fontFamily="@font/roboto_slab_light"
+            android:text="Humidy"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/tvTemp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mainLogo" />
+
+        <TextView
+            android:id="@+id/current_humidy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_slab_bold"
+            android:padding="2dp"
+            android:text="@{viewModel.currentWeather.Main.humidity.toString()}"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/tvHumidity"
+            app:layout_constraintStart_toStartOf="@id/tvHumidity"
+            app:layout_constraintTop_toBottomOf="@id/tvHumidity" />
+
+
+        <TextView
+            android:id="@+id/tvWind"
+            style="@style/heading2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:fontFamily="@font/roboto_slab_light"
+            android:text="Wind"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/tvHumidity"
+            app:layout_constraintTop_toBottomOf="@id/mainLogo" />
+
+        <TextView
+            android:id="@+id/current_wind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_slab_bold"
+            android:padding="2dp"
+            android:text="@{viewModel.currentWeather.wind.speed.toString()}"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/tvWind"
+            app:layout_constraintStart_toStartOf="@id/tvWind"
+            app:layout_constraintTop_toBottomOf="@id/tvWind" />
+
+
+        <TextView
+            android:id="@+id/tv_today"
+            style="@style/heading2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Today"
+            android:layout_marginStart="20dp"
+            app:layout_constraintEnd_toEndOf="@id/tvTemp"
+            app:layout_constraintStart_toStartOf="@id/tvTemp"
+            app:layout_constraintTop_toBottomOf="@id/current_temp" />
+
+        <TextView
+            android:id="@+id/tv_view_report"
+            style="@style/heading2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="View Report"
+            android:layout_marginEnd="10dp"
+            android:textColor="#A7B4E0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/current_temp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/pastTempRv"
+            android:layout_width="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_today"
+            android:layout_marginTop="30dp"
+            tools:itemCount="40"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:listitem="@layout/item_today_weather"
+            android:padding="5dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_height="wrap_content" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Weather_App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="rain">Rain</string>
+    <string name="error_message_network">Error with Network</string>
+    <string name="invalid">Invalid\n</string>
+    <string name="error_title_http">Error with Http\n</string>
+    <string name="error_message_http">error\n</string>
+    <string name="my_location">My Location</string>
+    <string name="search">search</string>
+    <string name="forecast">Forecast</string>
+    <string name="settings">Settings</string>
+    <string name="image">image</string>
+</resources>

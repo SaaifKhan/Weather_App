@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/locationFragment"
+        android:icon="@drawable/vector__4_"
+        android:title="@string/my_location" />
+
+    <item
+        android:id="@+id/searchFragment"
+        android:icon="@drawable/group_2"
+        android:title="@string/search" />
+
+    <item
+        android:id="@+id/foreCastFragment"
+        android:icon="@drawable/group_3"
+        android:title="@string/forecast" />
+
+    <item
+        android:id="@+id/setting"
+        android:icon="@drawable/group_4"
+        android:title="@string/settings" />
+
+
+
+
+
+
+
+
+</menu>

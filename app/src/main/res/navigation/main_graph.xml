@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph.xml"
+    app:startDestination="@id/locationFragment">
+
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.saif.weather_app.presenter.ui.LocationFragment"
+        android:label="fragment_location"
+        tools:layout="@layout/fragment_location" />
+    <fragment
+        android:id="@+id/foreCastFragment"
+        android:name="com.saif.weather_app.presenter.ui.forecast.ForeCastFragment"
+        android:label="fragment_fore_cast"
+        tools:layout="@layout/fragment_fore_cast" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.saif.weather_app.presenter.ui.search.SearchFragment"
+        android:label="SearchFragment" >
+        <argument
+            android:name="myBoolArg"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_searchFragment_to_locationFragment"
+            app:destination="@id/locationFragment" />
+    </fragment><action android:id="@+id/action_global_searchFragment"
+    app:destination="@id/searchFragment"/>
+</navigation>
