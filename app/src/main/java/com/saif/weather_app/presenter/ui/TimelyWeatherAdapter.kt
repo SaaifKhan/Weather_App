@@ -1,19 +1,13 @@
 package com.saif.weather_app.presenter.ui
 
-import android.view.LayoutInflater
-import android.view.ViewGroup
 import com.saif.weather_app.R
 import com.saif.weather_app.base.BaseAdapter
 import com.saif.weather_app.data.model.Response
 import com.saif.weather_app.databinding.ItemTodayWeatherBinding
 import com.saif.weather_app.presenter.databinding.loadDrawable
+import com.saif.weather_app.presenter.databinding.loadDrawableCoil
 
 class TimelyWeatherAdapter :BaseAdapter<Response.Data,ItemTodayWeatherBinding>(R.layout.item_today_weather) {
-
-
-
-
-
 
     override fun onItemInflated(
         items: Response.Data,
@@ -26,19 +20,12 @@ class TimelyWeatherAdapter :BaseAdapter<Response.Data,ItemTodayWeatherBinding>(R
         val iconResource = desc?.let {
             setIcon(it) }
         if (iconResource != null) {
-            binding.image.loadDrawable(iconResource)
+            binding.image.loadDrawableCoil(iconResource)
         }
 
 
 
-//        val iconResource = when (desc) {
-//            "broken clouds" -> R.drawable.moon_cloud
-//            "overcast clouds" -> R.drawable.topimage2
-//            "few clouds" -> R.drawable.topimage4
-//            "clear sky" -> R.drawable.clear_sky
-//            else -> R.drawable.clear_sky // Use a default icon for unknown descriptions
-//        }
-//        binding.image.loadDrawable(iconResource)
+
 
     }
 

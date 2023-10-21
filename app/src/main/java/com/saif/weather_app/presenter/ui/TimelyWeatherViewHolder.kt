@@ -6,6 +6,7 @@ import com.saif.weather_app.data.model.Response
 import com.saif.weather_app.databinding.ItemTodayWeatherBinding
 import com.saif.weather_app.presenter.databinding.load
 import com.saif.weather_app.presenter.databinding.loadDrawable
+import com.saif.weather_app.presenter.databinding.loadDrawableCoil
 
 class TimelyWeatherViewHolder(
     private val binding: ItemTodayWeatherBinding
@@ -24,7 +25,7 @@ class TimelyWeatherViewHolder(
             "clear sky" -> R.drawable.clear_sky
             else -> R.drawable.clear_sky // Use a default icon for unknown descriptions
         }
-            binding.image.loadDrawable(iconResource)
+            binding.image.loadDrawableCoil(iconResource)
 
     }
 }

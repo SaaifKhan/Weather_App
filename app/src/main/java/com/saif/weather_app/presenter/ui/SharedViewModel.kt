@@ -16,7 +16,7 @@ class SharedViewModel @Inject constructor() :ViewModel() {
 
 
     private val _pastWeather = MutableStateFlow<List<Response.Data>>(emptyList())
-    val pastWeather: StateFlow<List<Response.Data>> get() = _pastWeather
+    val  pastWeather: StateFlow<List<Response.Data>> get() = _pastWeather
 
     private val _searchResponse = MutableStateFlow<SearchAreaResponse>(SearchAreaResponse())
     val searchResponse : StateFlow<SearchAreaResponse> get() = _searchResponse

@@ -7,6 +7,8 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
+import coil.load
+import coil.transform.RoundedCornersTransformation
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.MultiTransformation
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
@@ -108,4 +110,14 @@ fun ImageView.loadDrawable(drawableResId: Int) {
         .placeholder(R.drawable.thumbnail)
         .transform(MultiTransformation(CenterCrop(), RoundedCorners(12)))
         .sizeMultiplier(0.5f).into(this)
+}
+
+@BindingAdapter("bind:loadDrawable")
+fun ImageView.loadDrawableCoil(drawableResId: Int) {
+    load(drawableResId) {
+        placeholder(R.drawable.thumbnail)
+        error(R.drawable.baseline_error_24)
+        size(50, 50) // Set your desired size here
+        transformations(RoundedCornersTransformation(12f))
+    }
 }
